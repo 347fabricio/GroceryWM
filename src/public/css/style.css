@@ -1,0 +1,143 @@
+.container-fluid > div {
+  transition: 0.2s;
+}
+
+.sortImgs > img {
+  cursor: pointer;
+  width: 10px;
+}
+
+#left-sidebar {
+  max-width: 20px;
+}
+
+#main-content {
+  max-width: fit-content;
+  height: 90vh;
+  scrollbar-width: thin;
+  scrollbar-color: #212529 #424242;
+  white-space: nowrap;
+}
+
+#btn-group > button {
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 0.75rem;
+  width: 80px;
+  white-space: pre-line;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.dataSenderOpened {
+  filter: blur(2px);
+}
+
+#closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#toRed {
+  border: 1px solid red;
+}
+
+.warn {
+  color: red;
+}
+
+#expiredOnes {
+  background-color: #1b1f22;
+  padding: 24px;
+  padding-bottom: 16px;
+}
+
+#expiredOnes {
+  width: 1400px;
+}
+
+#expiredProducts {
+  max-width: 1000px;
+}
+
+#closeExpiredOnesBtn {
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: none;
+  --bs-btn-hover-bg: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-active-bg: none;
+  --bs-btn-active-border-color: none;
+  cursor: pointer;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+}
+
+.pagination > li > a {
+  background-color: #212529;
+  color: #fff;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #ddd;
+  background-color: #313539;
+  border-color: #ddd;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.pagination > .active > a {
+  color: #212529;
+  background-color: #ccc !important;
+  border: solid 1px #ccc !important;
+}
+.pagination > .active > a:hover {
+  background-color: #ccc !important;
+  border: solid 1px #ccc;
+}
+
+/* 
+----------
+  DATA SENDER WINDOW
+----------
+*/
+
+#dSWindow {
+  background-color: #1b1f22;
+  max-width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dateContainer > label,
+#inputMadeOn > label,
+#inputExpiresOn > label {
+  width: 126px;
+}
+
+#btnSubmit {
+  width: 128px;
+}
+
+#alertWarning {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

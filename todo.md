@@ -1,0 +1,1 @@
+- Check if there's more than one page available when use ADD, REMOVE methods.
