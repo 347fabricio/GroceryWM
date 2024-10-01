@@ -9,6 +9,23 @@ class Table {
     this.previousPage();
   }
 
+  async getCurrentPage() {
+    let currentPage = document.querySelector("#products").getAttribute("page");
+    const rows = document.querySelectorAll("#products tbody tr").length;
+
+    console.log(rows, currentPage);
+
+    if (rows == 0 && currentPage > 1) {
+      currentPage--;
+      const { count } = await apiConnector.getByPage(currentPage - 1);
+      console.log("count ", count);
+
+      this.pagination(count);
+      document.querySelector("#products").setAttribute("page", currentPage);
+      this.currentPage(currentPage - 1);
+    }
+  }
+
   pagination(count) {
     const pages = Math.ceil(count / 50);
     document.querySelector("#products").setAttribute("page", 1);
@@ -32,6 +49,12 @@ class Table {
 
       document.querySelector("#page").classList.remove("d-none");
       document.querySelector("#page").classList.add(...["d-flex", "justify-content-center"]);
+    } else {
+      [...document.querySelectorAll("#page-item-bp")].forEach((x, y) => {
+        if (y > 0) x.remove();
+      });
+      document.querySelector("#page").classList.remove(...["d-flex", "justify-content-center"]);
+      document.querySelector("#page").classList.add("d-none");
     }
   }
 
@@ -58,8 +81,6 @@ class Table {
         await apiConnector.getByPage(+page);
         document.querySelector("#products").setAttribute("page", +page + 1);
         this.currentPage(page);
-      } else {
-        console.log("can not do that");
       }
     });
   }

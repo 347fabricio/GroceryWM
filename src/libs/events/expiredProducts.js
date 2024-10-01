@@ -16,7 +16,6 @@ export default () => {
     expiredProductsWindow.isNearExpiration(expiredProducts);
     expiredProductsWindow.tooltipInit();
     expiredProductsWindow.cleanTable();
-
     deleteProduct("#expiredOnes");
     cellOrdering.order("expiredProducts");
   });

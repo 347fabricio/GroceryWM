@@ -21,8 +21,8 @@ class ApiConnector {
     controller.updateProduct(id, product, page);
   }
 
-  delete(id, page) {
-    controller.deleteProducts(id, page);
+  async delete(id, page) {
+    await controller.deleteProducts(id, page);
   }
 }
 

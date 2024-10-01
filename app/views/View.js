@@ -49,7 +49,7 @@ export class View {
       const products = [...document.querySelectorAll("#products tbody tr #id div")].map((x) => x.innerText);
       const expiredProducts = [...document.querySelectorAll("#expiredProducts tbody tr #id div")].map((x) => x.innerText);
       const list = expiredProducts.map((x) => products.includes(x));
-      for (let i = list.length; i > 0; i--) {
+      for (let i = list.length; i >= 0; i--) {
         if (list[i] === false) document.querySelectorAll("#expiredProducts tbody tr")[i].remove();
       }
     }
